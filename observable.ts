@@ -1,15 +1,16 @@
 export class Observable<T> {
   private observers: ((item: T) => void)[] = [];
 
-constructor()
+constructor(private setTimeout?: boolean) {}
+
   subscribe(observer: (item: T) => void) {
     this.observers.push(observer);
   }
 
   publish(item: T) {
     this.observers.forEach(observer =>
-      setTimeout(() => observer(item))
+      this.setTimeout ? setTimeout(() => observer(item)): observer(item)
     );
-    console.log('published')
+    console.log('published', item)
   }
 }
