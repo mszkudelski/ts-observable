@@ -11,6 +11,6 @@ constructor(private setTimeout?: boolean) {}
     this.observers.forEach(observer =>
       this.setTimeout ? setTimeout(() => observer(item)): observer(item)
     );
-    console.log('published', item)
+    console.log('published', item);
   }
 }

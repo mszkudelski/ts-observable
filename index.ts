@@ -4,7 +4,7 @@ import { Observable } from "./observable";
 
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById("app");
-appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
+appDiv.innerHTML = `<h1>Observable example</h1>`;
 
 const observer = () => {
   console.time("a");
