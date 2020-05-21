@@ -1,7 +1,7 @@
 export class Observable<T> {
   private observers: ((item: T) => void)[] = [];
 
-constructor(private setTimeout?: boolean) {}
+  constructor(private setTimeout?: boolean) {}
 
   subscribe(observer: (item: T) => void) {
     this.observers.push(observer);
