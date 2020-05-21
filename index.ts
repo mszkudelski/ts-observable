@@ -7,20 +7,19 @@ const appDiv: HTMLElement = document.getElementById("app");
 appDiv.innerHTML = `<h1>Observable example</h1>`;
 
 const observer = () => {
-  console.time("a");
+  console.time("callback execution time:");
   new Array(200e6).forEach(() => {});
-  console.timeEnd("a");
-  console.log("done");
+  console.timeEnd("callback execution time:");
 };
 
-const observableNotEfficient = new Observable<number>();
+const observableNotEfficient = new Observable<string>();
 observableNotEfficient.subscribe(observer);
 
-observableNotEfficient.publish(1);
-observableNotEfficient.publish(2);
+observableNotEfficient.publish('Without setTimeout (1)');
+observableNotEfficient.publish('Without setTimeout (2)');
 
-const observable = new Observable<number>(true);
+const observable = new Observable<string>(true);
 observable.subscribe(observer);
 
-observable.publish(3);
-observable.publish(4);
+observable.publish('With setTimeout (1)');
+observable.publish('With setTimeout (2)');
