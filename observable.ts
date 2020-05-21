@@ -20,6 +20,6 @@ export class Subscription {
   constructor(private observable) {}
 
   unsubscribe() {
-    this.observable.unsubscribe(this)
+    this.observable.unsubscribe(this);
   }
 }
