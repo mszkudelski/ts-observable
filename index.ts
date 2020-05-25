@@ -12,5 +12,6 @@ const subscription = observable.subscribe(console.log);
 observable.publish(1);
 
 subscription.unsubscribe();
+observable.unsubscribe(subscription);
 
 observable.publish(2);
